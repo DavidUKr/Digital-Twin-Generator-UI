@@ -1,0 +1,37 @@
+.scroll-view{
+    border: 1px solid white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inline-view{
+    display: flex;
+    flex-direction: row;
+}
+
+.scroll-image {
+    border: 1px solid #ccc;
+    width:1000px;
+    height:1000px;
+    position: relative; /* Enable absolute positioning for layered images */
+    overflow: hidden; /* Prevent images from overflowing the tile */
+  }
+  
+  .fl-scroll-layer,
+  .msk-scroll-layer {
+    width: 100%; /* Fill the tile's width */
+    height: 100%; /* Fill the tile's height */
+    max-width:1000px;
+    max-height:1000px;
+    object-fit: contain; /* Maintain aspect ratio, scale to fit */
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+  }
+  
+  /* Optional: Ensure segmentation layers are above floorplan */
+  .msk-tile-layer {
+    z-index: 10; /* Higher z-index for segmentation layers */
+  }
+

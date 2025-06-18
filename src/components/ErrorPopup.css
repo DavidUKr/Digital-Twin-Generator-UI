@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #1a1a1a; //Dark background like in the image */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  gap: 10px; /* Space between elements */
+}
+
+.error-container p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.error-container h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.error-container button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.error-container button:hover {
+  background-color: #555;
+}

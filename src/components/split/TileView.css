@@ -1,0 +1,43 @@
+.tile-view {
+    margin: 30px;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column; /* Ensures rows stack vertically */
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row; /* Tiles are arranged horizontally */
+    flex-wrap: wrap; /* Allows tiles to wrap to the next line if needed */
+    align-items: center; /* Vertically centers tiles in the row */
+  }
+  
+  .tile {
+    border: 1px solid #ccc;
+    max-width: 130px;
+    max-height: 130px;
+    position: relative; /* Enable absolute positioning for layered images */
+    overflow: hidden; /* Prevent images from overflowing the tile */
+  }
+  
+  .fl-tile-layer,
+  .msk-tile-layer {
+    width: 100%; /* Fill the tile's width */
+    height: 100%; /* Fill the tile's height */
+    max-width: 130px; /* Constrain to tile's width */
+    max-height: 130px; /* Constrain to tile's height */
+    object-fit: contain; /* Maintain aspect ratio, scale to fit */
+    position: absolute; /* Stack images on top of each other */
+    top: 0;
+    left: 0;
+  }
+
+  .fl-tile-layer{
+    z-index:1;
+    position: relative;
+  }
+  
+  /* Optional: Ensure segmentation layers are above floorplan */
+  .msk-tile-layer {
+    z-index: 10; /* Higher z-index for segmentation layers */
+  }

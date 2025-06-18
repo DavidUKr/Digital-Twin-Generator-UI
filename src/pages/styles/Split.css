@@ -1,0 +1,29 @@
+.settings-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.switch-container{
+    margin:20px;
+}
+
+.switch{
+    margin:0px;
+    border-radius:0px;
+    width:100px;
+}
+
+.switch:disabled{
+    background-color: red;
+    color:white;
+}
+
+#tile-switch{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#scroll-switch{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

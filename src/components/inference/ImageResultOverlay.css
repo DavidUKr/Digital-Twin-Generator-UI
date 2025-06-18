@@ -1,0 +1,30 @@
+.image-container {
+  position: relative;
+  display: inline-block; /* Allows container to shrink-wrap content */
+  max-width: 1000px; /* Optional: cap maximum size */
+  max-height: 1000px;
+  margin: 50px; /* Keep margin as is */
+  border: 2px solid red;
+   /* Optional: cap maximum height */
+}
+
+.floorplan,
+.mask {
+  position: absolute; /* Required for overlay */
+  top: 0;
+  left: 0;
+  width: 100%; /* Fill container width */
+  height: 100%; /* Fill container height */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.floorplan {
+  z-index: 1; /* Base image on bottom */
+  position: relative; /* Ensure floorplan sets container size */
+}
+
+.mask {
+  z-index: 2; /* Mask on top */
+  
+  opacity: 0.5;
+}

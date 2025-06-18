@@ -1,0 +1,39 @@
+.editor-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.layer-select-btn{
+    display:flex;
+    flex-direction: column;
+}
+
+.layer-select-btn:disabled{
+    background-color: red;
+    color:white;
+}
+
+.view-container {
+    border: 1px solid #ccc;
+    width: 1000px;
+    height: 1000px;
+    position: relative; /* Enable absolute positioning for layered images */
+    overflow: hidden; /* Prevent images from overflowing the tile */
+  }
+  
+.fl-edit-split,
+.seg-edit-split {
+width: 100%; /* Fill the tile's width */
+height: 100%; /* Fill the tile's height */
+max-width: 1000px; /* Constrain to tile's width */
+max-height: 1000px; /* Constrain to tile's height */
+object-fit: contain; /* Maintain aspect ratio, scale to fit */
+position: absolute; /* Stack images on top of each other */
+top: 0;
+left: 0;
+}
+
+/* Optional: Ensure segmentation layers are above floorplan */
+.seg-edit-split {
+z-index: 10; /* Higher z-index for segmentation layers */
+}
