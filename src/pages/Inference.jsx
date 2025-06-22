@@ -62,6 +62,11 @@ const Inference = ({modified}) => {
     const handleEditInference = () => {
         navigate('/split');
     }
+
+    const handleGenerateDT = () => {
+      navigate('/digitaltwin');
+    }
+
     //get model inference evry time the page loads
     useEffect(()=>{
       let isMounted = true;
@@ -100,7 +105,7 @@ const Inference = ({modified}) => {
         {!loading? <ImageResultOverlay maskOpacity={maskOpacity}/>:<ImagePreview/>}
         <br />
         <button onClick={handleEditInference} disabled={loading}>EDIT RESULT</button>
-        <button disabled={loading} >GENERATE DIGITAL TWIN</button>
+        <button onClick={handleGenerateDT} disabled={loading} >GENERATE DIGITAL TWIN</button>
         {loading && <LoadingSpinner/>}
         {error && <ErrorPopup message={errorMessage}/>}
         {

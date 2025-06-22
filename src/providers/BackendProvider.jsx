@@ -13,7 +13,8 @@ const BackendProvider = ({children}) => {
         get_sam_embedding_path:baseUrl+"/get_SAM_embedding",
         save_mask_embedding:baseUrl+"/save_mask",
         split_image_masks:baseUrl+"/split",
-        reconstruct_image_masks:baseUrl+"/reconstruct"
+        reconstruct_image_masks:baseUrl+"/reconstruct",
+        build_digitaltwin:baseUrl+"/digitaltwin"
     }
   return (
     <BackendContext.Provider value={BackendPaths}>
