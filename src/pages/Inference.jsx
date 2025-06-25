@@ -9,6 +9,7 @@ import ErrorPopup from '../components/ErrorPopup';
 import ImageResultOverlay from '../components/inference/ImageResultOverlay';
 import LayerViewSelector from '../components/inference/layerViewSelector';
 import OpacitySlider from '../components/OpacitySlider';
+import MaskCanvas from '../components/MaskCanvas';
 
 const Inference = ({modified}) => {
 
@@ -102,13 +103,17 @@ const Inference = ({modified}) => {
         <h3>INFERENCE</h3>
         <LayerViewSelector/> 
         <OpacitySlider maskOpacity={maskOpacity} setMaskOpacity={setMaskOpacity}/>
-        {!loading? <ImageResultOverlay maskOpacity={maskOpacity}/>:<ImagePreview/>}
+        {/* {!loading? <ImageResultOverlay maskOpacity={maskOpacity}/>:<ImagePreview/>} */}
+        {!loading?
+          <MaskCanvas width={900} height={600} background={floorplan.png} mask_layers={resultFiles} opacity={maskOpacity}/>
+          : <ImagePreview/>
+        }
         <br />
         <button onClick={handleEditInference} disabled={loading}>EDIT RESULT</button>
         <button onClick={handleGenerateDT} disabled={loading} >GENERATE DIGITAL TWIN</button>
         {loading && <LoadingSpinner/>}
         {error && <ErrorPopup message={errorMessage}/>}
-        {
+        {/* {
           !loading &&
           resultFiles.segmentation &&
           resultFiles.segmentation.find((layer) => layer.class === "wall")?.png && (
@@ -130,7 +135,7 @@ const Inference = ({modified}) => {
               />
             </div>
           )
-        }
+        } */}
     </div>
   )
 }

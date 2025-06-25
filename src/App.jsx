@@ -13,12 +13,14 @@ import Inference from './pages/Inference'
 import { FileProvider } from './providers/FileProvider'
 import BackendProvider from './providers/BackendProvider'
 import DigitalTwin from './pages/DigitalTwin'
+import SettingsProvider from './providers/SettingsProvider'
 
 function App() {
 
   return (
     <BackendProvider>
     <FileProvider>
+    <SettingsProvider>
       <div style={{
         margin:'50px'
       }}>
@@ -33,7 +35,8 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      </FileProvider>
+    </SettingsProvider>
+    </FileProvider>
     </BackendProvider>
   )
 }

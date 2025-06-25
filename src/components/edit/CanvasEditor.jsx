@@ -212,10 +212,10 @@ const CanvasEditor = ({ fl_split, seg_split, saveSeg}) => {
 
     const imageData = tempCtx.createImageData(maskWidth, maskHeight);
     for (let i = 0; i < maskData.length; i++) {
-      const value = maskData[i] > 0 ? 0.5 : 0;
-      imageData.data[i * 4] = 255; //Red
-      imageData.data[i * 4 + 1] = 0; //Green
-      imageData.data[i * 4 + 2] = 0; //Blue
+      const value = maskData[i] > 0 ? 1 : 0;
+      imageData.data[i * 4] = value * 255; //Red
+      imageData.data[i * 4 + 1] = value * 255; //Green
+      imageData.data[i * 4 + 2] = value * 255; //Blue
       imageData.data[i * 4 + 3] = value * 255; //Alpha
     }
     tempCtx.putImageData(imageData, 0, 0);
