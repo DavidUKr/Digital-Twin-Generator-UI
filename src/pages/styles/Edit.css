@@ -3,6 +3,11 @@
     flex-direction: row;
 }
 
+.editor-sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
 .layer-select-btn{
     display:flex;
     flex-direction: column;

@@ -14,7 +14,6 @@ const TileView = ({changeToScroll, maskOpacity}) => {
 
   return (
     <div>
-      Click on tile to edit masks
       <div className="tile-view">
       {Object.keys(floorplan.split).map((rowKey) => {
         const rowNumber = parseInt(rowKey.match(/\d+/)?.[0] || '0', 10);
@@ -25,12 +24,11 @@ const TileView = ({changeToScroll, maskOpacity}) => {
 
               return (
                 <Tile 
-                  key={columnKey} 
-                  data={png} 
+                  key={columnKey}
                   row={rowNumber} 
                   col={colNumber} 
                   onEdit={handleEditTile}
-                  maskOpacity={maskOpacity}
+                  opacity={maskOpacity}
                 />
               );
             })}

@@ -106,13 +106,17 @@ const Edit = () => {
 
   return (
     <div>
-        <h1>Edit</h1>
-        <h2>{`Split: row ${row}, column ${col}`}</h2>
-        <h5>*Save Mask before changing layer, else it will be reset!</h5>
         <div className='editor-container'>
+            <div>
+                <div className='editor-sidebar'>
+                <h1>Edit</h1>
+                <h2>{`Split: row ${row}, column ${col}`}</h2>
+                <h5>*Save Mask before changing layer, else it will be reset!</h5>
+            </div>
             <div>
                 <RadioLayerSelector setLayer={setLayerSelect} startingOption={layerSelect}/>
                 <ToggleViewUnlayered setViewUnlayered={setViewUnlayered}/>
+            </div>
             </div>
             <CanvasEditor fl_split={flSplit} seg_split={segSplit} saveSeg={updateSegTile}/>
         </div>

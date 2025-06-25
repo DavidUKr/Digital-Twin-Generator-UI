@@ -1,9 +1,21 @@
 .settings-container{
     display: flex;
+    flex-direction: column;
+}
+
+.split-container{
+    display: flex;
     flex-direction: row;
 }
 
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .switch-container{
+    display: flex;
+    flex-direction: row;
     margin:20px;
 }
 
@@ -26,4 +38,8 @@
 #scroll-switch{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+#split-save-btn{
+    align-self: flex-start;
 }

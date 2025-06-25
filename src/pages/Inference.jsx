@@ -10,6 +10,7 @@ import ImageResultOverlay from '../components/inference/ImageResultOverlay';
 import LayerViewSelector from '../components/inference/layerViewSelector';
 import OpacitySlider from '../components/OpacitySlider';
 import MaskCanvas from '../components/MaskCanvas';
+import './styles/Inference.css'
 
 const Inference = ({modified}) => {
 
@@ -99,15 +100,18 @@ const Inference = ({modified}) => {
     
 
   return (
-    <div>
-        <h3>INFERENCE</h3>
-        <LayerViewSelector/> 
-        <OpacitySlider maskOpacity={maskOpacity} setMaskOpacity={setMaskOpacity}/>
-        {/* {!loading? <ImageResultOverlay maskOpacity={maskOpacity}/>:<ImagePreview/>} */}
-        {!loading?
-          <MaskCanvas width={900} height={600} background={floorplan.png} mask_layers={resultFiles} opacity={maskOpacity}/>
-          : <ImagePreview/>
-        }
+    <div className='inference-container'>
+      <h3>INFERENCE</h3>
+        <div className='inference-maskviewer'>
+          <div className='inference-sidebar'>
+            <LayerViewSelector/> 
+            <OpacitySlider maskOpacity={maskOpacity} setMaskOpacity={setMaskOpacity}/>
+          </div>
+          {!loading?
+            <MaskCanvas width={900} height={600} background={floorplan.png} mask_layers={resultFiles} opacity={maskOpacity}/>
+            : <ImagePreview/>
+          }
+        </div>
         <br />
         <button onClick={handleEditInference} disabled={loading}>EDIT RESULT</button>
         <button onClick={handleGenerateDT} disabled={loading} >GENERATE DIGITAL TWIN</button>
@@ -136,7 +140,7 @@ const Inference = ({modified}) => {
             </div>
           )
         } */}
-    </div>
+      </div>
   )
 }
 

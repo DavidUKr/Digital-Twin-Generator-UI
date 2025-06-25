@@ -3,6 +3,8 @@
     margin: 20px;
     display: flex;
     flex-direction: column;
+    /* width: 80%; */
+    height: 80%;
 }
 
 .inline-view{
@@ -12,10 +14,11 @@
 
 .scroll-image {
     border: 1px solid #ccc;
-    width:1000px;
-    height:1000px;
+    width:750px;
+    height:700px;
     position: relative; /* Enable absolute positioning for layered images */
     overflow: hidden; /* Prevent images from overflowing the tile */
+    object-fit: contain;
   }
   
   .fl-scroll-layer,

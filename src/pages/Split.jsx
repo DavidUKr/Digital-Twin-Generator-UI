@@ -127,27 +127,33 @@ const Split = () => {
 
   return (
     <div>
-      <h1>Splitting</h1>
-      <div className='settings-container'>
-        <LayerViewSelector/>
-        <OpacitySlider maskOpacity={maskOpacity} setMaskOpacity={setMaskOpacity}/>
-      </div>
-      <div className='switch-container'>
-        
-        <button onClick={handleSwitchToTileView} disabled={view==='tile'} className='switch' id='tile-switch'>TILE</button>
-        <button onClick={handleSwitchToScrollView} disabled={view==='scroll'} className='switch' id='scroll-switch'>SCROLL</button>
-      </div>
+      <div className='split-container'>
+        <div className='sidebar-container'>
+          <h1>Splitting</h1>
+          <LayerViewSelector/>
+          <OpacitySlider maskOpacity={maskOpacity} setMaskOpacity={setMaskOpacity}/>
+          <br />
+          <div className='switch-container'>
+            <button onClick={handleSwitchToTileView} disabled={view==='tile'} className='switch' id='tile-switch'>TILE</button>
+            <button onClick={handleSwitchToScrollView} disabled={view==='scroll'} className='switch' id='scroll-switch'>SCROLL</button>
+          </div>
+          <br />
+          {view=='tile' && 'Click on tile to edit masks'}
 
-      {view === 'tile'? <TileView 
-        changeToScroll={handleChangeToScrollFromView}
-        maskOpacity={maskOpacity}
-      />:<ScrollView 
-        startRow={startScrollRow} 
-        startCol={startScrollCol}
-        maskOpacity={maskOpacity}
-      />}
+          <button onClick={handleSave} id='split-save-btn'>SAVE</button>
+        </div>
+        <div className='split-view-container'>
 
-      <button onClick={handleSave}>SAVE</button>
+        {view === 'tile'? <TileView 
+          changeToScroll={handleChangeToScrollFromView}
+          maskOpacity={maskOpacity}
+        />:<ScrollView 
+          startRow={startScrollRow} 
+          startCol={startScrollCol}
+          maskOpacity={maskOpacity}
+        />}
+        </div>
+      </div>
       {loading && <LoadingSpinner/>}
       {error && <ErrorPopup message={errorMessage}/>}
     </div>

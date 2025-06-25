@@ -282,8 +282,8 @@ const CanvasEditor = ({ fl_split, seg_split, saveSeg}) => {
 
   // Styles
   const styles = {
-    container: { textAlign: 'center', fontFamily: 'Arial, sans-serif' },
-    button: { padding: '10px 20px', margin: '5px', cursor: 'pointer', borderRadius: '5px' },
+    container: { textAlign: 'center', fontFamily: 'Arial, sans-serif', marginLeft: '50px'},
+    button: { padding: '10px 20px', margin: '5px', cursor: 'pointer', borderRadius: '5px'},
     activeButton: { backgroundColor: '#4CAF50', color: 'white' },
     canvas: { border: '1px solid #ccc', display: 'block', margin: '10px auto' },
   };
